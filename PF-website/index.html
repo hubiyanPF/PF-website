@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Globe</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add D3.js and TopoJSON libraries -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <!-- Booststrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Manrope Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="pf-navbar w-100">
+        <div class="nav-inner d-flex gap-32-box align-items-center">
+            <img class="pf-logo" src="images/logo.svg" alt="">
+            <button class="pf-btn-transparent">
+                Countries
+            </button>
+            <button class="pf-btn-transparent">
+                About
+            </button>
+            <button class="nav-prime-btn">
+                Get in Touch
+            </button>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="pf-container hero-container">
+        <div class="head-section d-flex flex-column align-items-center gap-32-box">
+            <div class="d-flex flex-column align-items-center">
+                <div class="stars-chip d-flex align-items-center gap-10-box d-none">
+                    <div class="d-flex">
+                        <img class="rating-star" src="images/grade.svg" alt="">
+                        <img class="rating-star" src="images/grade.svg" alt="">
+                        <img class="rating-star" src="images/grade.svg" alt="">
+                        <img class="rating-star" src="images/grade.svg" alt="">
+                        <img class="rating-star" src="images/grade.svg" alt="">
+                    </div>
+                    200+ businesses scaled
+                </div>
+                <div class="head-and-tag d-flex flex-column gap-24-box">
+                    <h1 class="head-text-1 m-0">
+                        Your Local Payment Provider for Emerging Markets
+                    </h1>
+                    <p class="head-tag m-0">
+                        Seamless, secure, and scalable payment integrations that drive growth to your business
+                    </p>
+                </div>
+            </div>
+            <div class="hero-button-wrapper">
+                <button class="primary-btn">
+                    Get started
+                </button>
+                <button class="blur-box">
+                    Get ss
+                </button>
+            </div>
+        </div>
+        <div class="globe-container">
+            <canvas id="globe"></canvas>
+            <script src="script.js"></script>
+        </div>
+        <div class="rel-gradient" id="interactive-object">
+            <div class="graph-elements d-flex flex-column">
+                <div class="first-row-graph-elements d-flex w-100 justify-content-between">
+                    <img class="graphs-svg" src="images/graph-line.svg" alt="">
+                    <img class="sqr-grapg" src="images/graph-pentagon.svg" alt="">
+                </div>
+                <div class="d-flex w-100 justify-content-start">
+                    
+                </div>
+                <div class="d-flex w-100 justify-content-center">
+                    <img class="small-graph" src="images/graph-arrow.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section end -->
+
+    <!-- Marquee -->
+    <section class="pf-container d-flex flex-column gap-24-box align-items-center justify-content-center section-topping">
+        <h6 class="m-0 w-100 marquee-tag">
+            Our integrations:
+        </h6>
+        <div class="marquee">
+            <div class="gradient-overlay left-gradient"></div>
+            <div class="gradient-overlay right-gradient"></div>
+            <div class="marquee-inner">
+                <div class="marquee-content">
+                    <img class="marquee-item" src="images/Bkash.svg" alt="">
+                    <img class="marquee-item" src="images/upi.png" alt="">
+                    <img class="marquee-item" src="images/fawry.svg" alt="">
+                    <img class="marquee-item" src="images/easypaisa.svg" alt="">
+                    <img class="marquee-item" src="images/Jazzcash.svg" alt="">
+                    <img class="marquee-item" src="images/banco-nacion-seeklogo.svg" alt="">
+                    <img class="marquee-item" src="images/pix.svg" alt="">
+                </div>
+                <!-- Duplicate the content for seamless looping -->
+                <div class="marquee-content">
+                    <img class="marquee-item" src="images/Bkash.svg" alt="">
+                    <img class="marquee-item" src="images/upi.png" alt="">
+                    <img class="marquee-item" src="images/fawry.svg" alt="">
+                    <img class="marquee-item" src="images/pix.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Marquee end -->
+
+    <!-- Bento grid Section -->
+    <section class="pf-container d-flex flex-column gap-24-box align-items-center   justify-content-center section-topping">
+    <div class="second-head-tag-wrapper d-flex flex-column gap-10-box">
+        <h2 class="m-0 secondary-head">
+            Why PayFuture?
+        </h2>
+        <p class="m-0 secondary-tag w-75">
+            PayFuture understands the cultural nuances of the different emerging market countries. Our payment solution gives your business access to the most popular local payment methods, ensuring seamless compatibility with just one integration. With our cutting-edge technology your business will run smoothly across global markets. 
+        </p>
+    </div>
+    <div class="bento-cards-wrapper w-100">
+        <div class="bento-column d-flex flex-column gap-20-box">
+            <div class="bento-row d-flex gap-20-box res-zero-520-column zero-520-w-100">
+                <div class="card bento-card bento-one d-flex justify-content-start align-items-center zero-520-w-100 res-521-760-w-50">
+                    <img class="like-gif" src="images/bento-images/like-badge.gif" alt="">
+                    <div class="bento-content-wrapper d-flex flex-column gap-08-box">
+                        <img class="bento-icon" src="images/bento-icons/search.svg" alt="">
+                        <h3 class="bento-head m-0">
+                            Optimised Transactions
+                        </h3>
+                        <p class="bento-content-tag">
+                            Boost your business with our intuitive payment system that ensures smooth, secure transactions. Reduce chargebacks and increase conversions.
+                        </p>
+                    </div>
+                </div>
+                <div class="card bento-card bento-two d-flex justify-content-start zero-520-w-100 res-521-760-w-50">
+                    <img class="notification-gif" src="images/bento-images/notification.gif" alt="">
+                    <div class="bento-content-wrapper d-flex flex-column gap-08-box">
+                        <img class="bento-icon" src="images/bento-icons/campaign.svg" alt="">
+                        <h3 class="bento-head m-0">
+                            Real-Time Alerts
+                        </h3>
+                        <p class="bento-content-tag">
+                            Stay informed with real-time updates on every transaction, keeping you in control at all times. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bento-row sec-row d-flex gap-20-box res-zero-520-column res-521-760-wrap w-100">
+                <div class="card bento-card bento-three d-flex justify-content-start align-items-center zero-520-w-100">
+                    <img class="numbers-gif" src="images/bento-images/numbers.gif" alt="">
+                    <div class="bento-content-wrapper d-flex flex-column gap-08-box">
+                        <img class="bento-icon" src="images/bento-icons/chart_data.svg" alt="">
+                        <h3 class="bento-head m-0">
+                            Smart Analytics
+                        </h3>
+                        <p class="bento-content-tag">
+                            Make informed decisions with our data tools and boost your business performance. 
+                        </p>
+                    </div>
+                </div>
+                <div class="card bento-card bento-four d-flex justify-content-start align-items-center zero-520-w-100">
+                    <img class="messages-gif" src="images/bento-images/text-message.gif" alt="">
+                    <div class="bento-content-wrapper d-flex flex-column gap-08-box">
+                        <img class="bento-icon" src="images/bento-icons/campaign.svg" alt="">
+                        <h3 class="bento-head m-0">
+                            24/7 Global Support
+                        </h3>
+                        <p class="bento-content-tag">
+                            Our global support team is available around the clock to ensure your operations run smoothly.
+                        </p>
+                    </div>
+                </div>
+                <div class="card bento-card bento-five d-flex justify-content-start align-items-center zero-520-w-100">
+                    <img class="toggle-gif" src="images/bento-images/toggle.gif" alt="">
+                    <div class="bento-content-wrapper d-flex flex-column gap-08-box">
+                        <img class="bento-icon" src="images/bento-icons/search.svg" alt="">
+                        <h3 class="bento-head m-0">
+                            Single API Integration
+                        </h3>
+                        <p class="bento-content-tag">
+                            PayFuture’s single API simplifies access to all local payment methods.  
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- Bento grid Section -->
+
+    <!-- Our features Section -->
+    <section class="pf-container d-flex flex-column gap-40-box align-items-center   justify-content-center section-topping zero-520-gap-16 sec-card-wrapper">
+    <div class="d-flex gap-20-box w-100 res-zero-520-column res-521-760-column res-762-990-column">
+        <div class="d-flex flex-column gap-24-box w-100">
+            <div class="second-head-tag-wrapper d-flex flex-column gap-10-box w-100">
+                <h2 class="m-0 secondary-head">
+                    Step into success with us
+                </h2>
+                <p class="m-0 secondary-tag">
+                    Partner with PayFuture to grow your business. Our payment solution simplify market entry and boost your sales in emerging markets
+                </p>
+            </div>
+            <div class="metrics-box d-flex w-100 justify-content-between align-items-start">
+                <div class="d-flex flex-column gap-04-box">
+                    <h2 class="m-0 secondary-head">
+                        300+
+                    </h2>
+                    <p class="metrics-tag">
+                        Global Merchants
+                    </p>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="d-flex flex-column gap-04-box">
+                    <h2 class="m-0 secondary-head">
+                        150+
+                    </h2>
+                    <p class="metrics-tag">
+                        Payment Options
+                    </p>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="d-flex flex-column gap-04-box">
+                    <h2 class="m-0 secondary-head">
+                        40+
+                    </h2>
+                    <p class="metrics-tag">
+                        Markets
+                    </p>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="d-flex flex-column gap-04-box">
+                    <h2 class="m-0 secondary-head">
+                        4B+
+                    </h2>
+                    <p class="metrics-tag">
+                        Transactions Processed
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="sec-card-wrapper d-flex gap-40-box w-60 zero-520-w-100 zero-520-gap-16 res-521-760-w-100">
+            <div class="secondary-card d-flex gap-32-box flex-column align-items-start justify-content-center res-521-760-w-100 res-762-990-w-100">
+                <div class="yellow-icon-box position-relative">
+                    <img class="yellow-icon" src="images/yellow-icons/arrow-icon.gif" alt="">
+                    <img class="yellow-blur position-absolute" src="images/yellow-icons/redo.svg" alt="">
+                </div>
+                <h4 class="sec-card-title m-0">
+                    Seamless Pay-ins & Payouts
+                </h4>
+            </div>
+            <div class="secondary-card d-flex gap-32-box flex-column align-items-start justify-content-center res-521-760-w-100 res-762-990-w-100">
+                <div class="yellow-icon-box position-relative">
+                    <img class="yellow-icon" src="images/yellow-icons/brush.gif" alt="">
+                    <img class="yellow-blur position-absolute" src="images/yellow-icons/redo.svg" alt="">
+                </div>
+                <h4 class="sec-card-title m-0">
+                    Local Market Expertise
+                </h4>
+            </div>
+            
+        </div>
+    </div>
+    <div class="sec-card-wrapper d-flex gap-40-box w-100 zero-520-w-100 res-zero-520-column zero-520-gap-16 res-521-760-column">
+        <div class="secondary-card d-flex gap-32-box align-items-center justify-content-start w-100 lower-sec-card">
+            <div class="yellow-icon-box position-relative">
+                <img class="yellow-icon" src="images/yellow-icons/phone.gif" alt="">
+                <img class="yellow-blur position-absolute" src="images/yellow-icons/redo.svg" alt="">
+            </div>
+            <h4 class="sec-card-title m-0">
+                Expert Assistance 24/7
+            </h4>
+        </div>
+        <div class="secondary-card d-flex gap-32-box align-items-center justify-content-start w-100 lower-sec-card">
+            <div class="yellow-icon-box position-relative">
+                <img class="yellow-icon" src="images/yellow-icons/eart-icon.gif" alt="">
+                <img class="yellow-blur position-absolute" src="images/yellow-icons/redo.svg" alt="">
+            </div>
+            <h4 class="sec-card-title m-0">
+                Support for Multiple Currencies
+            </h4>
+        </div>
+        <div class="secondary-card d-flex gap-32-box align-items-center justify-content-start w-100 lower-sec-card">
+            <div class="yellow-icon-box position-relative">
+                <img class="yellow-icon" src="images/yellow-icons/smartphone.gif" alt="">
+                <img class="yellow-blur position-absolute" src="images/yellow-icons/redo.svg" alt="">
+            </div>
+            <h4 class="sec-card-title m-0">
+                Proactive Fraud Detection
+            </h4>
+        </div>
+    </div>
+    </section>
+    <!-- Our features Section -->
+
+    <!-- Our Solutions Section -->
+    <section class="pf-container d-flex flex-column gap-24-box section-topping res-zero-520-column res-521-760-column w-100">
+        <div class="desk-dis-none">
+            <div class="second-head-tag-wrapper d-flex flex-column gap-10-box w-100">
+                <h2 class="m-0 secondary-head">
+                    Our Solutions
+                </h2>
+                <p class="m-0 secondary-tag">
+                    Our payment solution connects you to popular payment options in each region, leveraging our local expertise to help your business easily enter emerging markets.
+                </p>
+            </div>
+        </div>
+    <div class="features-img-details d-flex gap-24-box">
+        <div class="metrics-box d-flex flex-column w-100 justify-content-center align-items-start gap-32-box">
+            <div class="res-dis-none">
+                <div class="second-head-tag-wrapper d-flex flex-column gap-10-box w-100">
+                    <h2 class="m-0 secondary-head">
+                        Our Solutions
+                    </h2>
+                    <p class="m-0 secondary-tag">
+                        Our payment solution connects you to popular payment options in each region, leveraging our local expertise to help your business easily enter emerging markets.
+                    </p>
+                </div>
+            </div>
+            <div class="d-flex flex-column gap-16-box">
+                <div class="solution-check d-flex align-items-start gap-08-box">
+                    <img src="images/green-check.svg" alt="Check icon">
+                    Simplify global financial operations with a single API
+                </div>
+                <div class="solution-check d-flex align-items-start gap-08-box">
+                    <img src="images/green-check.svg" alt="Check icon">
+                    Our Risk Management Service provides expert risk analysts
+                </div>
+                <div class="solution-check d-flex align-items-start gap-08-box">
+                    <img src="images/green-check.svg" alt="Check icon">
+                    Acceptance of the most local payment methods in each region
+                </div>
+                <div class="solution-check d-flex align-items-start gap-08-box">
+                    <img src="images/green-check.svg" alt="Check icon">
+                    Easy-to-use payment platform with detailed, data-rich reports available in just a few clicks
+                </div>
+            </div>
+        </div>
+        <div class="beam-border-white">
+            <img class="beam-img" src="images/our-solutions-snap.png" alt="Our Solutions Snapshot">
+        </div>
+    </div>
+    </section>
+    <!-- Our Solutions Section -->
+
+    <!-- The PF Product Suite -->
+    <section class="pf-container d-flex flex-column gap-24-box w-100 section-topping">
+    <h2 class="m-0 secondary-head">
+        The PayFuture Product Suite
+    </h2>
+    <div class="d-flex w-100 gap-30-box align-items-center res-0-400-column res-zero-520-column res-521-760-column res-762-990-column">
+        <div class="outline-card-wrapper">
+            <div class="outline-card d-flex flex-column gap-16-box">
+                <div class="d-flex align-items-center gap-12-box">
+                    <img src="images/product-suite-icons/Send.png" alt="Local Payins Icon">
+                    <h3 class="bento-head m-0">
+                        Local Payins
+                    </h3>
+                </div>
+                <p class="bento-content-tag">
+                    PayFuture empowers your business to grow in emerging markets by enabling the most popular local payment methods.
+                </p>
+            </div>
+            <div class="outline-card d-flex flex-column gap-16-box">
+                <div class="d-flex align-items-center gap-12-box">
+                    <img src="images/product-suite-icons/Send.png" alt="Risk Management Icon">
+                    <h3 class="bento-head m-0">
+                        Risk Management
+                    </h3>
+                </div>
+                <p class="bento-content-tag">
+                    Partner with PayFuture to grow your business. Our payment solution simplifies market entry and boosts your sales in emerging markets
+                </p>
+            </div>
+        </div>
+        <div class="beam-border">
+            <img class="beam-img" src="images/product-suite.png" alt="Product Suite Overview">
+        </div>
+        <div class="outline-card-wrapper">
+            <div class="outline-card gap-16-box">
+                <div class="d-flex align-items-center gap-12-box">
+                    <img src="images/product-suite-icons/Send.png" alt="Global Payouts Icon">
+                    <h3 class="bento-head m-0">
+                        Global Payouts
+                    </h3>
+                </div>
+                <p class="bento-content-tag">
+                    Streamline your global payout process with one seamless integration.
+                </p>
+            </div>
+            <div class="outline-card gap-16-box">
+                <div class="d-flex align-items-center gap-12-box">
+                    <img src="images/product-suite-icons/Send.png" alt="Conversion Recovery Icon">
+                    <h3 class="bento-head m-0">
+                        Conversion Recovery
+                    </h3>
+                </div>
+                <p class="bento-content-tag">
+                    PayFuture’s conversion recovery system has the ability to convert up to 20% of potentially failed transactions into approvals.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex gap-30-box res-zero-520-column sec-outline-wrapper">
+        <div class="outline-card d-flex flex-column gap-16-box zero-520-w-100">
+            <div class="d-flex align-items-center gap-12-box">
+                <img src="images/product-suite-icons/Send.png" alt="Data-Rich Reporting Icon">
+                <h3 class="bento-head m-0">
+                    Data-Rich Reporting
+                </h3>
+            </div>
+            <p class="bento-content-tag">
+                Whether you need to review a single transaction or identify trends across processors or merchants, our system offers real-time visibility into all transactions.
+            </p>
+        </div>
+        <div class="outline-card d-flex flex-column gap-16-box zero-520-w-100">
+            <div class="d-flex align-items-center gap-12-box">
+                <img src="images/product-suite-icons/Send.png" alt="AI-Powered Technology Icon">
+                <h3 class="bento-head m-0">
+                    AI-Powered Technology
+                </h3>
+            </div>
+            <p class="bento-content-tag">
+                PayFuture’s Machine Learning enhances its advanced analytics, further optimizing the entire payment technology ecosystem.
+            </p>
+        </div>
+    </div>
+    </section>
+    <!-- The PF Product Suite -->
+
+    <!-- FAQ Section -->
+    <section class="pf-container d-flex flex-column gap-24-box align-items-center justify-content-center section-topping">
+    <div class="d-flex align-items-center gap-20-box w-100">
+        <div class="d-flex flex-column gap-24-box w-100">
+            <h2 class="m-0 secondary-head w-100 text-center">
+                FAQ
+            </h2>
+            <div class="accordion d-flex flex-column gap-16-box" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            What industries do you support?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>We provide flexible solutions for a variety of sectors and industries. Our clients include leading brands in regulated markets, financial services, and eCommerce.</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Do you have fixed pricing?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>We customize our service for each merchant, offering fair and clear pricing to support your business's financial success.</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Can PayFuture assist with mobile payments?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>Yes, we support mobile wallets and localized mobile payment systems, which are increasingly popular in emerging markets.</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Can multiple team members access the PayFuture system?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>Yes, we offer multiple permission access levels, allowing different access levels for various team members, from customer service to C-level executives.</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Which markets does PayFuture serve?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>We focus on emerging markets, including regions in the Indian subcontinent, Africa, Southeast Asia, MENA, and Latin America. We offer payment services in more than 40 countries.</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            How does PayFuture support its merchants?
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="faq-line"></div>
+                            <strong>We offer 24/7 transaction monitoring, a dedicated support team, and tools to help your business optimize payment processes and manage risks effectively.</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- FAQ Section -->
+
+
+
+    <!-- Don’t Miss a Thing Section -->
+    <section class="pf-container section-topping">
+    <div class="d-flex align-items-center w-100 justify-content-between miss-a-thing res-zero-520-column res-zero-520-column-reverse res-521-760-column-rev">
+        <img class="miss-a-thing-img w-50" src="images/dont-miss-a-thing.png" alt="Subscribe to our newsletter" aria-hidden="true">
+        <div class="miss-athing-content d-flex flex-column gap-32-box align-items-center justify-content-start w-100">
+            <div class="d-flex flex-column gap-08-box w-100">
+                <h2 class="m-0 secondary-head w-100">
+                    Don’t miss a thing!
+                </h2>
+                <p class="bento-content-tag">
+                    Get ahead of the competition! Subscribe to our newsletter for the latest updates, industry insights, and news from PayFuture.
+                </p>
+            </div>
+            <!-- Form -->
+            <div class="d-flex justify-content-center align-items-center special-form-control w-100">
+                <!-- Input -->
+                <input class="form-control form-control-lg nude-form" type="email" placeholder="Your Email ID" aria-label="Email address for subscription" required>
+                <!-- Verify Button -->
+                <button type="submit" class="d-flex subscribe-button align-items-center" aria-label="Subscribe to newsletter">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- Don’t Miss a Thing Section -->
+
+
+    <!-- Footer -->
+    <section class="d-flex flex-column justify-content-between section-topping footer-pf">
+    <div class="pf-container footer-content-wrapper d-flex align-items-center justify-content-between res-zero-520-column zero-520-w-100 res-521-760-column">
+        <div class="footer-block d-flex flex-column gap-16-box zero-520-w-100 res-521-760-w-100">
+            <div class="footer-logo-wrapper d-flex justify-content-center align-items-center">
+                <img class="footer-logo" src="images/footer-logo.png" alt="PayFuture Technologies Logo">
+            </div>
+            <div class="d-flex flex-column gap-16-box">
+                <h2 class="m-0 secondary-head w-100 footer-head">
+                    See How We Can Help<span class="footer-head-span"> Accelerate</span> Your Business
+                </h2>
+                <div class="d-flex gap-12-box">
+                    <a href="#" class="footer-social-icon" aria-label="LinkedIn">
+                        <img class="social-icons" src="images/footer-icon/linkedin.svg" alt="LinkedIn Icon">
+                    </a>
+                    <a href="#" class="footer-social-icon" aria-label="Instagram">
+                        <img class="social-icons" src="images/footer-icon/instagram.svg" alt="Instagram Icon">
+                    </a>
+                    <a href="#" class="footer-social-icon" aria-label="YouTube">
+                        <img class="social-icons" src="images/footer-icon/youtube.svg" alt="YouTube Icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-block d-flex flex-column gap-10-box zero-520-w-100 res-521-760-w-100">
+            <h5 class="footer-h5">
+                • Quick Links
+            </h5>
+            <div class="d-flex flex-wrap gap-16-box">
+                <a href="#" class="footer-btn w-fit-content" aria-label="About Us">
+                    About Us
+                </a>
+                <a href="#" class="footer-btn w-fit-content" aria-label="Countries">
+                    Countries
+                </a>
+                <a href="#" class="footer-btn w-fit-content g-in-t" aria-label="Get in Touch">
+                    Get in Touch
+                    <img src="images/footer-btn-icon.svg" alt="Get in Touch Icon">
+                </a>
+            </div>
+        </div>
+        <div class="footer-block d-flex flex-column gap-10-box w-fit-content zero-520-w-100 res-521-760-w-100">
+            <h5 class="footer-h5">
+                • Contact
+            </h5>
+            <div class="d-flex flex-column">
+                <a href="mailto:info@payfuture.net" class="footer-btn w-fit-content nude" aria-label="Email PayFuture">
+                    info@payfuture.net
+                </a>
+                <a href="tel:+97112345679" class="footer-btn w-fit-content nude" aria-label="Call PayFuture">
+                    +971 123 45679
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-banner d-flex justify-content-center align-items-center zero-520-w-100">
+        © 2024 PayFuture Technologies. All rights reserved.
+    </div>
+    </section>
+    <!-- Footer -->
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
